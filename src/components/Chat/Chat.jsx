@@ -3,17 +3,17 @@ import { connect } from "react-redux";
 import * as messagesActions from "../../redux/messages/messages-actions";
 
 function Chat({ messages, deleteMessage }) {
-  const onClick = (e) => {
-    deleteMessage(e.target.innerHTML);
+  const onClick = (e) => {    
+    deleteMessage(e.target.id);
   };
 
   return (
     <ul className="Chat">
       <h1 className="Chat-title">Chat</h1>
       {messages &&
-        messages.map((message, idx) => (
-          <li key={idx} className="Chat-message" onClick={onClick}>
-            {message}
+        messages.map(message => (
+          <li key={message.id} id={message.id} className="Chat-message" onClick={onClick}>
+            {message.text}
           </li>
         ))}
     </ul>
@@ -25,7 +25,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  deleteMessage: (message) => dispatch(messagesActions.deleteMessage(message)),
+  deleteMessage: (id) => dispatch(messagesActions.deleteMessage(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chat);

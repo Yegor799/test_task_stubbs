@@ -2,6 +2,7 @@ import "./Message.css";
 import * as messagesActions from "../../redux/messages/messages-actions";
 import { connect } from "react-redux";
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 function Message({ addMessage }) {
   const [message, setMessage] = useState("");
@@ -13,7 +14,8 @@ function Message({ addMessage }) {
       setMessage("");
       return;
     }
-    addMessage(message);
+    const newMessage = {text: message, id: uuidv4()}
+    addMessage(newMessage);
     setMessage("");
   };
 

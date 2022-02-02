@@ -6,7 +6,7 @@ export const messagesReducer = (state = [], { type, payload }) => {
       return [...state, payload];
 
     case actionTypes.DELETE_MESSAGE:
-      return state.filter((message) => message !== payload);
+      return state.filter((message) => message.id !== payload);
 
     default:
       return state;
