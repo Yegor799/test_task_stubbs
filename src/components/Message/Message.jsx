@@ -22,9 +22,7 @@ function Message({ addMessage }) {
 
   const onInputChange = (e) => {
     setMessage(e.target.value);
-  };
-
-  
+  };  
 
   return (
     <div>
@@ -35,10 +33,7 @@ function Message({ addMessage }) {
           onChange={onInputChange}
           className="Message-input"
         />
-        
-        <button type="submit" className="Message-button">
-          
-        </button>
+        <button type="submit" className="Message-button"></button>
       </form>
     </div>
   );

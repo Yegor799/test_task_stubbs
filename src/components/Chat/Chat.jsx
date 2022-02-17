@@ -12,18 +12,18 @@ function Chat({ messages, deleteMessage }) {
 
   return (
     <div className="Chat">
-    <ul className="Chat-messages">      
-      {messages &&
-        messages.map(message => (
-          <li key={message.id} id={message.id} className="Chat-message" onClick={onClick}>
-            {message.text}   
-            <span className="Chat-date">{new Date().toLocaleTimeString().slice(0,-6)}</span>
-          </li>
+      <ul className="Chat-messages">
+        {messages &&
+          messages.map(message => (
+            <li key={message.id} id={message.id} className="Chat-message" onClick={onClick}>
+              {message.text}
+              <span className="Chat-date">{new Date().toLocaleTimeString().slice(0, -6)}</span>
+            </li>
           
-        ))}
-      </ul>      
-        <Message />      
-      </div>
+          ))}
+      </ul>
+      <Message />
+    </div>
   );
 }
 
