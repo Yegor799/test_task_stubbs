@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
+
 function Message({ addMessage }) {
   const [message, setMessage] = useState("");
 
@@ -23,6 +24,8 @@ function Message({ addMessage }) {
     setMessage(e.target.value);
   };
 
+  
+
   return (
     <div>
       <form className="Message" onSubmit={handleAddMessage}>
@@ -32,8 +35,9 @@ function Message({ addMessage }) {
           onChange={onInputChange}
           className="Message-input"
         />
+        
         <button type="submit" className="Message-button">
-          Send
+          
         </button>
       </form>
     </div>

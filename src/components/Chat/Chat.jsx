@@ -1,22 +1,29 @@
 import "./Chat.css";
 import { connect } from "react-redux";
 import * as messagesActions from "../../redux/messages/messages-actions";
+import Message from "../Message/Message";
 
 function Chat({ messages, deleteMessage }) {
   const onClick = (e) => {    
     deleteMessage(e.target.id);
   };
 
+  
+
   return (
-    <ul className="Chat">
-      <h1 className="Chat-title">Chat</h1>
+    <div className="Chat">
+    <ul className="Chat-messages">      
       {messages &&
         messages.map(message => (
           <li key={message.id} id={message.id} className="Chat-message" onClick={onClick}>
-            {message.text}
+            {message.text}   
+            <span className="Chat-date">{new Date().toLocaleTimeString().slice(0,-6)}</span>
           </li>
+          
         ))}
-    </ul>
+      </ul>      
+        <Message />      
+      </div>
   );
 }
 

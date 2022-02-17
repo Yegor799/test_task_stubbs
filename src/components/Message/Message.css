@@ -1,24 +1,38 @@
 .Message {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 500px auto;
+  position: relative;
 }
 
 .Message-input {
-  margin-right: 30px;
-  height: 30px;
-  border: 1px solid lightblue;
-  border-radius: 4px;
+  width: 100%;
+  background-color: rgba(26, 25, 25, 0.5);
+  height: 74px;
+  border: none;
+  border-radius: 15px;
   font-size: 20px;
+  color: white;
 }
 
 .Message-input:focus {
   outline: none;
-  border: 1px solid #2196f3;
+  /* border: 1px solid #2196f3; */
 }
 
 .Message-button {
-  width: 200px;
+  position: absolute;
+  cursor: pointer;
+  height: auto;
+  width: 30px;
+  height: 30px;
+  background: url("../../img/Icon-send.svg") no-repeat;
+  background-size: cover;
+  right: 20px;
+  top: 30px;
+  border: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.17;
+
+  /* width: 200px;
   padding: 2px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -29,5 +43,5 @@
   line-height: 1.88;
   letter-spacing: 0.06em;
   color: #ffffff;
-  background-color: #2196f3;
+  background-color: #2196f3; */
 }
